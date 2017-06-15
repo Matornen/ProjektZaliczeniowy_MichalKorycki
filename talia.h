@@ -9,6 +9,7 @@ class CTalia
 private:
 	CKarta* TabKart[52];// kompozycja
 	int NrKarty;
+	int IdKarty;
 public:
 	CTalia();
 	~CTalia();
