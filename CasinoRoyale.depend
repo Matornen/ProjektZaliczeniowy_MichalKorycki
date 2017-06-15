@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1497533047 source:c:\users\tazz\desktop\informaty\casinoroyale\gracz.cpp
+	"Gracz.h"
+
+1497533726 c:\users\tazz\desktop\informaty\casinoroyale\gracz.h
+	"krupier.h"
+
+1497533248 c:\users\tazz\desktop\informaty\casinoroyale\krupier.h
+	"talia.h"
+
+1497533726 c:\users\tazz\desktop\informaty\casinoroyale\talia.h
+	"Karta.h"
+	<cstdlib>
+	<ctime>
+
+1497534719 c:\users\tazz\desktop\informaty\casinoroyale\karta.h
+	<iostream>
+
+1497533047 source:c:\users\tazz\desktop\informaty\casinoroyale\karta.cpp
+	"Karta.h"
+
+1497533047 source:c:\users\tazz\desktop\informaty\casinoroyale\krupier.cpp
+	"Krupier.h"
+
+1497533059 source:c:\users\tazz\desktop\informaty\casinoroyale\main.cpp
+	"Scheduler.h"
+
+1497533648 c:\users\tazz\desktop\informaty\casinoroyale\scheduler.h
+	"Gracz.h"
+	"Krupier.h"
+	"talia.h"
+
+1497533739 source:c:\users\tazz\desktop\informaty\casinoroyale\scheduler.cpp
+	"Scheduler.h"
+
+1497534080 source:c:\users\tazz\desktop\informaty\casinoroyale\talia.cpp
+	"Talia.h"
+
