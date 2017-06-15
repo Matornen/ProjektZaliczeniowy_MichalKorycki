@@ -8,48 +8,29 @@ CTalia::CTalia()
 
 
 	//CKarta* TabKart[52];
-	int i = 0, k=0;
-	int wartosckart = 2;
-	for (k = 0; k < 9; k++)
-	{
+	int k=0;
+	//int IdKarty=0;
 
-
-		for (i=0; i < 4; i++)//2
-		{
-			if (i / 2 == 0)// to czarna
-				TabKart[i+k*4] = new CKarta(0, wartosckart);
-			else // czerwona
-				TabKart[i+k*4] = new CKarta(1, wartosckart);
-		}//koniec for
-		wartosckart++;
-	}// koniec FOR z K // tworze wszystko do 10
-
-	 //tutaj tworze // od Jopka do Krola
-	wartosckart = 2;// zaczynam od Jopka = 2;
-	for (k=9; k < 12; k++)
-	{
-
-
-		for (i=0; i < 4; i++)//2
-		{
-			if (i / 2 == 0)// to czarna
-				TabKart[i + k * 4] = new CKarta(0, wartosckart);
-			else // czerwona
-				TabKart[i + k * 4] = new CKarta(1, wartosckart);
-		}//koniec for
-		wartosckart++;
-	}// koniec FOR z K // tworze wszystko do Krola
-	//tworze ASY
-	wartosckart = 11;
-	for (i = 0; i < 4; i++)//2
-	{
-		if (i / 2 == 0)// to czarna
-			TabKart[i + k * 4] = new CKarta(0, wartosckart);
-		else // czerwona
-			TabKart[i + k * 4] = new CKarta(1, wartosckart);
-	}//koniec for
-}//koniec KONSTRUKTORA
-
+	for (int j=0; j<4; j++)
+    {
+        //int wartosckart = 2;
+        for (k = 0; k < 9; k++)
+        {
+            TabKart[k+j*13] = new CKarta(0, k+2, k+j*13);
+            //wartosckart++;
+            //IdKarty++;
+        }//koniec for
+        //wartosckart=2;
+        for (k=0; k<3; k++)
+        {
+            TabKart[k+9+j*13] = new CKarta(0, k+2, k+9+j*13);
+           // wartosckart++;
+          //  IdKarty++;
+        }
+        TabKart[j*13+12]=new CKarta(0, 11, j*13+12);
+        //IdKarty++;
+    }//koniec KONSTRUKTORA
+}
 
 CTalia::~CTalia()
 {
@@ -89,10 +70,12 @@ void CTalia::DrukujTalie()
 	cout << "\n";
 	for (int i = 0; i < 13; i++)
 	{
-		for (int k = 0; k < 4; k++)
 		{
 			cout.width(4);
-			cout << right<<TabKart[k + i * 4]->DajWartosc()<<",";
+			cout << right<<TabKart[i*4]->DajWartosc()<<", "<<TabKart[i*4]->PokazKarte()<<"; ";
+			cout << right<<TabKart[i*4+1]->DajWartosc()<<", "<<TabKart[i*4+1]->PokazKarte()<<"; ";
+			cout << right<<TabKart[i*4+2]->DajWartosc()<<", "<<TabKart[i*4+2]->PokazKarte()<<"; ";
+			cout << right<<TabKart[i*4+3]->DajWartosc()<<", "<<TabKart[i*4+3]->PokazKarte()<<"; ";
 		}
 		cout << "\n";
 	}
