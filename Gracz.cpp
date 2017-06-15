@@ -16,7 +16,8 @@ int CGracz::Graj()
 		using namespace std;
 		ptrTabKart[IloscKartNaRece++] = ptrTalia->DajKarte();
 		Zlicz();//wywoluje podliczanie kart
-
+		cout<<"Masz na rece: ";
+        PokazKarty();
 		if (suma > 21)
 		{
 			cout << "Masz w kartach: " << suma << " PRZEGRALES !!" << endl;

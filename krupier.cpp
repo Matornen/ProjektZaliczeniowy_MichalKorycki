@@ -47,3 +47,13 @@ int CKrupier::Zlicz()
 	}//koniec FOR
 	return suma;
 }
+
+void CKrupier::PokazKarty()
+    {
+        using namespace std;
+        for (int i=0; i<IloscKartNaRece; i++)
+        {
+            cout<<ptrTabKart[i]->PokazKarte()<<" ";
+        }
+        cout<<endl;
+    }
