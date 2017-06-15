@@ -16,18 +16,18 @@ CTalia::CTalia()
         //int wartosckart = 2;
         for (k = 0; k < 9; k++)
         {
-            TabKart[k+j*13] = new CKarta(0, k+2, k+j*13);
+            TabKart[k+j*13] = new CKarta(j, k+2, k+j*13);
             //wartosckart++;
             //IdKarty++;
         }//koniec for
         //wartosckart=2;
         for (k=0; k<3; k++)
         {
-            TabKart[k+9+j*13] = new CKarta(0, k+2, k+9+j*13);
+            TabKart[k+9+j*13] = new CKarta(j, k+2, k+9+j*13);
            // wartosckart++;
           //  IdKarty++;
         }
-        TabKart[j*13+12]=new CKarta(0, 11, j*13+12);
+        TabKart[j*13+12]=new CKarta(j, 11, j*13+12);
         //IdKarty++;
     }//koniec KONSTRUKTORA
 }
@@ -71,11 +71,11 @@ void CTalia::DrukujTalie()
 	for (int i = 0; i < 13; i++)
 	{
 		{
-			cout.width(4);
-			cout << right<<TabKart[i*4]->DajWartosc()<<", "<<TabKart[i*4]->PokazKarte()<<"; ";
-			cout << right<<TabKart[i*4+1]->DajWartosc()<<", "<<TabKart[i*4+1]->PokazKarte()<<"; ";
-			cout << right<<TabKart[i*4+2]->DajWartosc()<<", "<<TabKart[i*4+2]->PokazKarte()<<"; ";
-			cout << right<<TabKart[i*4+3]->DajWartosc()<<", "<<TabKart[i*4+3]->PokazKarte()<<"; ";
+			cout.width(8);
+			cout << right<<TabKart[i*4]->PokazKarte()<<"; ";
+			cout << right<<TabKart[i*4+1]->PokazKarte()<<"; ";
+			cout << right<<TabKart[i*4+2]->PokazKarte()<<"; ";
+			cout << right<<TabKart[i*4+3]->PokazKarte()<<"; ";
 		}
 		cout << "\n";
 	}
