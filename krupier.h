@@ -11,6 +11,7 @@ class CKrupier
 	virtual ~CKrupier();
 	int Graj();
 	int Zlicz();
+	void PokazKarty();
     protected:
         CTalia* ptrTalia;
         CKarta* ptrTabKart[10];
