@@ -1,6 +1,7 @@
 #ifndef KARTA_H
 #define KARTA_H
 #include <iostream>
+
 class CKarta
 {
 private:
@@ -12,7 +13,7 @@ public:
 	CKarta(int kolor, int wartosc, int Id);
 	~CKarta();
 	int DajWartosc();
-	int PokazKarte();
+	char* PokazKarte();
 };
 
 #endif // COKOLWIEK_H
