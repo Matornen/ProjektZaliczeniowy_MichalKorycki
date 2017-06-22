@@ -2,11 +2,11 @@
 
 
 
-CScheduler::CScheduler(int przyIluPasKrupier)
+CScheduler::CScheduler(int przyIluPasKrupier, int Kredyty)
 {
 	Talia = new CTalia;
-	Gracz = new CGracz(przyIluPasKrupier, Talia->DajAdres());
-	Krupier = new CKrupier(przyIluPasKrupier, Talia->DajAdres());
+	Gracz = new CGracz(przyIluPasKrupier, Talia->DajAdres(), Kredyty);
+	Krupier = new CKrupier(przyIluPasKrupier, Talia->DajAdres(), Kredyty);
 }
 
 
@@ -23,11 +23,14 @@ CScheduler::~CScheduler()
 
 void CScheduler::Run()
 {
-	Talia->DrukujTalie();
+    Talia->DrukujTalie();
+    while (Gracz->kasa>0)
+    {
 	Talia->Tasuj();
 	Talia->DrukujTalie();
-	int x=1,y;// krupier musi na poczatku wziac karte
+	int x=1,y=1;// krupier musi na poczatku wziac karte
 	int Tura=1;
+	std::cout<<"Masz "<<Gracz->kasa<<" kredytow."<<std::endl;
 	do//Obaj musza dostac jadna karte !
 	{
 		std::cout << "Tura nr: " << Tura << "\n";
@@ -35,29 +38,46 @@ void CScheduler::Run()
 			// pasuje, tez wtedy kiedy ma >PrzyIluPasKrupier
 		{
 			x = Krupier->Graj();
-			if (Krupier->Zlicz() > 21)
-			{
-				std::cout << "Wygral gracz!\n";
-				break;
-			}
 		}
-		else std::cout << "Krupier: Masz w kartach: " << Krupier->Zlicz() << std::endl;
+		if (y!=0)
+        {
+		y = Gracz->Graj();
+        }
 		Tura++;
-	} while (y=Gracz->Graj());//zwroci 0 albo 1;
+	} while (x!=0 || y!=0);//zwroci 0 albo 1;
 
 	if (y == 0)//Kto wygra³???
 	{
-		if(Gracz->Zlicz() > 21)
+	    if(Krupier->Zlicz()>21)
+        {
+            std::cout << "Wygral gracz!\n";
+            Gracz->Wygrana();
+        }
+        else if(Gracz->Zlicz() > 21)
+			{
 			std::cout << "Wygral Krupier!\n";
+			Gracz->Przegrana();
+
+			}
 		else if(Gracz->Zlicz()>Krupier->Zlicz())
 		{
 			std::cout << "Wygral Gracz!\n";
+			Gracz->Wygrana();
+
 		}
 		else if(Gracz->Zlicz()==Krupier->Zlicz())
 		{
 			std::cout << "REMIS\n";
+
 		}
-		else std::cout << "Wygral Krupier!\n";
+		else
+        {
+        std::cout << "Wygral Krupier!\n";
+		Gracz->Przegrana();
+        }
 	}
+	Gracz->ClearHand();
+	Krupier->ClearHand();
+    }
 }
 

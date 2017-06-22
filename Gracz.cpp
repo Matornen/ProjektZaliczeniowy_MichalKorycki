@@ -1,10 +1,12 @@
 #include "Gracz.h"
+#include "string.h"
 
 
 
-CGracz::CGracz(int x, CTalia* y)
-	:CKrupier(x,y)//lista inicjalizacyjna - BO DZIEDZICZENIE !
+CGracz::CGracz(int x, CTalia* y, int z)
+	:CKrupier(x,y,z)//lista inicjalizacyjna - BO DZIEDZICZENIE !
 {
+
 }
 
 CGracz::~CGracz()
@@ -12,8 +14,8 @@ CGracz::~CGracz()
 
 int CGracz::Graj()
 {
-
 		using namespace std;
+
 		ptrTabKart[IloscKartNaRece++] = ptrTalia->DajKarte();
 		Zlicz();//wywoluje podliczanie kart
 		cout<<"Masz na rece: ";
@@ -27,20 +29,48 @@ int CGracz::Graj()
 		{
 			cout << "Masz w kartach: " << suma << endl
 				<< "Czy chcesz grac dalej ? !0 - tak, 0 - nie" << endl;
-			int x = 3;
-			do {
-				if (cin.fail() == 1)
-				{
-					cin.clear(); // najlpierw czyszcze flage
-					cin.ignore();// potem ignoruje to co w buferze Cin
-				}
+			char x[10];
+			int xt=1;
+			do
+            {
 				cin >> x;
-				//jesli podano zle
-			} while (cin.good() == 0 );//sprawdzam czy gut
-			return x;
+			if(strcmp(x,"0")==0)
+            {
+                return 0;
+            }
+            else if (strcmp(x, "motherlode")==0)
+            {
+                DodajKredyty();
+                cout<<"Dodano 50000 kredytów. Stan konta: "<<kasa<<endl;
+                xt=1;
+            }
+            else if (strcmp(x,"Hopal")==0)
+            {
+            std::cout<<"Hopal For Opal!"<<std::endl;
+            xt=1;
+            }
+            else return 1;
+
+			} while (xt!=0);
 		}
 }
 
+int CGracz::Kredyty()
+{
+    return kasa;
+}
 
+void CGracz::Przegrana()
+{
+    kasa-=10000;
+}
 
+void CGracz::Wygrana()
+{
+    kasa+=10000;
+}
 
+void CGracz::DodajKredyty()
+{
+    kasa+=50000;
+}
