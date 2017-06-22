@@ -67,11 +67,10 @@ CKarta *CTalia::DajKarte()
 void CTalia::DrukujTalie()
 {
 	using namespace std;
-	cout << "\n";
 	for (int i = 0; i < 13; i++)
 	{
 		{
-			cout.width(8);
+			cout.width(2);
 			cout << right<<TabKart[i*4]->PokazKarte()<<"; ";
 			cout << right<<TabKart[i*4+1]->PokazKarte()<<"; ";
 			cout << right<<TabKart[i*4+2]->PokazKarte()<<"; ";
@@ -79,6 +78,7 @@ void CTalia::DrukujTalie()
 		}
 		cout << "\n";
 	}
+	cout << "\n";
 }
 
 int CTalia::DajNrKarty()

@@ -22,7 +22,7 @@ int CGracz::Graj()
         PokazKarty();
 		if (suma > 21)
 		{
-			cout << "Masz w kartach: " << suma << " PRZEGRALES !!" << endl;
+			cout << "Masz w kartach: " << suma << endl;
 			return 0;
 		}
 		else
@@ -49,8 +49,11 @@ int CGracz::Graj()
             std::cout<<"Hopal For Opal!"<<std::endl;
             xt=1;
             }
+            else if (strcmp(x, "Porada")==0)
+            {
+            Porada();
+            }
             else return 1;
-
 			} while (xt!=0);
 		}
 }
@@ -60,17 +63,36 @@ int CGracz::Kredyty()
     return kasa;
 }
 
-void CGracz::Przegrana()
+void CGracz::Przegrana(int stawka)
 {
-    kasa-=10000;
+    kasa-=stawka;
 }
 
-void CGracz::Wygrana()
+void CGracz::Wygrana(int stawka)
 {
-    kasa+=10000;
+    kasa+=stawka;
 }
 
 void CGracz::DodajKredyty()
 {
     kasa+=50000;
+}
+
+int CGracz::Postaw()
+{
+    int stawka;
+    do {
+        if (std::cin.fail() == 1)
+            {
+                std::cin.clear(); //
+                std::cin.ignore();//
+            }
+            std::cin >> stawka;
+        } while (std::cin.good() == 0 || stawka<0 || stawka>kasa);
+    return stawka;
+}
+
+void CGracz::Porada()
+{
+    std::cout<<"Najlepsza strategia na gre w kasynie jest wyjscie z kasyna. [Porada w budowie jako DLC]"<<std::endl;
 }
