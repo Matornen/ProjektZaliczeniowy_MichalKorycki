@@ -75,3 +75,42 @@
 1498131223 source:c:\users\micha³\desktop\projektzaliczeniowy_michalkorycki-master\talia.cpp
 	"Talia.h"
 
+1498130003 source:f:\pppp\projektzaliczeniowy_michalkorycki-master\gracz.cpp
+	"Gracz.h"
+	"string.h"
+
+1498130003 f:\pppp\projektzaliczeniowy_michalkorycki-master\gracz.h
+	"krupier.h"
+
+1498130003 f:\pppp\projektzaliczeniowy_michalkorycki-master\krupier.h
+	"talia.h"
+
+1498130003 f:\pppp\projektzaliczeniowy_michalkorycki-master\talia.h
+	"Karta.h"
+	<cstdlib>
+	<ctime>
+
+1498130003 f:\pppp\projektzaliczeniowy_michalkorycki-master\karta.h
+	<iostream>
+
+1498137573 source:f:\pppp\projektzaliczeniowy_michalkorycki-master\karta.cpp
+	"Karta.h"
+	<string.h>
+
+1498130003 source:f:\pppp\projektzaliczeniowy_michalkorycki-master\krupier.cpp
+	"Krupier.h"
+
+1498130003 source:f:\pppp\projektzaliczeniowy_michalkorycki-master\main.cpp
+	"Scheduler.h"
+
+1498130003 f:\pppp\projektzaliczeniowy_michalkorycki-master\scheduler.h
+	"Gracz.h"
+	"Krupier.h"
+	"talia.h"
+
+1498130003 source:f:\pppp\projektzaliczeniowy_michalkorycki-master\scheduler.cpp
+	"Scheduler.h"
+
+1498130003 source:f:\pppp\projektzaliczeniowy_michalkorycki-master\talia.cpp
+	"Talia.h"
+

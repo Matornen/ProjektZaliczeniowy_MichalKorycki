@@ -14,13 +14,13 @@ CKarta::CKarta(int x, int y, int i)
     switch (x)
     {
     case 0:
-    NazwaKarty[2]='P'; break ;
+    NazwaKarty[2]='\3'; break ;
     case 1:
-    NazwaKarty[2]='K'; break ;
+    NazwaKarty[2]='\4'; break ;
     case 2:
-    NazwaKarty[2]='T'; break;
+    NazwaKarty[2]='\5'; break;
     case 3:
-    NazwaKarty[2]='D'; break;
+    NazwaKarty[2]='\6'; break;
     }
     switch (i%13)
     {
