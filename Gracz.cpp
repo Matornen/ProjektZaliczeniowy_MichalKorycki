@@ -41,12 +41,12 @@ int CGracz::Graj()
             else if (strcmp(x, "motherlode")==0)
             {
                 DodajKredyty();
-                cout<<"Dodano 50000 kredytów. Stan konta: "<<kasa<<endl;
+                cout<<"Dodano 50000 kredytÃ³w. Stan konta: "<<kasa<<endl;
                 xt=1;
             }
             else if (strcmp(x,"Hopal")==0)
             {
-            std::cout<<"Hopal For Opal!"<<std::endl;
+            //std::cout<<"Hopal For Opal!"<<std::endl;
             xt=1;
             }
             else if (strcmp(x, "Porada")==0)
