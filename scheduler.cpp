@@ -23,14 +23,18 @@ CScheduler::~CScheduler()
 
 void CScheduler::Run()
 {
-    Talia->DrukujTalie();
+    //Talia->DrukujTalie();
+    int Gra=1;
     while (Gracz->kasa>0)
     {
 	Talia->Tasuj();
-	Talia->DrukujTalie();
+	//Talia->DrukujTalie();
 	int x=1,y=1;// krupier musi na poczatku wziac karte
+
 	int Tura=1;
 	std::cout<<"Masz "<<Gracz->kasa<<" kredytow."<<std::endl;
+	std::cout<<"Ile chcesz postawic?"<<std::endl;
+	int stawka=Gracz->Postaw();
 	do//Obaj musza dostac jadna karte !
 	{
 		std::cout << "Tura nr: " << Tura << "\n";
@@ -48,21 +52,26 @@ void CScheduler::Run()
 
 	if (y == 0)//Kto wygra³???
 	{
-	    if(Krupier->Zlicz()>21)
+	    std::cout<<"Krupier: "<<Krupier->Zlicz()<<". Gracz: "<<Gracz->Zlicz()<<std::endl;
+	    if(Krupier->Zlicz()>21 && Gracz->Zlicz()>21)
+        {
+            std::cout << "Wszyscy przegrali.\n";
+        }
+        else if (Krupier->Zlicz()>21)
         {
             std::cout << "Wygral gracz!\n";
-            Gracz->Wygrana();
+            Gracz->Wygrana(stawka);
         }
         else if(Gracz->Zlicz() > 21)
 			{
 			std::cout << "Wygral Krupier!\n";
-			Gracz->Przegrana();
+			Gracz->Przegrana(stawka);
 
 			}
 		else if(Gracz->Zlicz()>Krupier->Zlicz())
 		{
 			std::cout << "Wygral Gracz!\n";
-			Gracz->Wygrana();
+			Gracz->Wygrana(stawka);
 
 		}
 		else if(Gracz->Zlicz()==Krupier->Zlicz())
@@ -73,11 +82,13 @@ void CScheduler::Run()
 		else
         {
         std::cout << "Wygral Krupier!\n";
-		Gracz->Przegrana();
+		Gracz->Przegrana(stawka);
         }
 	}
 	Gracz->ClearHand();
 	Krupier->ClearHand();
+	Gra++;
     }
+    std::cout<<"Koniec gry. Liczba rozegranych rund: "<<Gra-1<<std::endl;
 }
 

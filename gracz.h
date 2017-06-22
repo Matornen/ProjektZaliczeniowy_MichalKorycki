@@ -11,9 +11,11 @@ class CGracz : public CKrupier
         virtual ~CGracz();
         int Graj();
         int Kredyty();
-        void Przegrana();
-        void Wygrana();
+        void Przegrana(int stawka);
+        void Wygrana(int stawka);
         void DodajKredyty();
+        int Postaw();
+        void Porada();
     protected:
     private:
 };
