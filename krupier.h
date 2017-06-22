@@ -7,16 +7,19 @@
 class CKrupier
 {
     public:
-        CKrupier(int PrzyIluPas, CTalia* AdresTalii);
+        CKrupier(int PrzyIluPas, CTalia* AdresTalii, int kredytygracza);
 	virtual ~CKrupier();
 	int Graj();
 	int Zlicz();
+	int kasa;
 	void PokazKarty();
+	void ClearHand();
     protected:
         CTalia* ptrTalia;
         CKarta* ptrTabKart[10];
         int IloscKartNaRece;
         int suma;
+
     private:
         int przyilupas;
 };

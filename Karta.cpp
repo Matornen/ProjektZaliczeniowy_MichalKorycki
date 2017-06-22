@@ -14,13 +14,13 @@ CKarta::CKarta(int x, int y, int i)
     switch (x)
     {
     case 0:
-    NazwaKarty[2]='\3'; break ;
+    NazwaKarty[2]='P'; break ;
     case 1:
-    NazwaKarty[2]='\4'; break ;
+    NazwaKarty[2]='K'; break ;
     case 2:
-    NazwaKarty[2]='\5'; break;
+    NazwaKarty[2]='T'; break;
     case 3:
-    NazwaKarty[2]='\6'; break;
+    NazwaKarty[2]='D'; break;
     }
     switch (i%13)
     {
@@ -67,8 +67,16 @@ int CKarta::DajWartosc()
 char* CKarta::PokazKarte()
 {
     char* ch = new char[3];
+    char* sim = new char[10];
+    char* sim1 = new char[3];
     ch[0]=NazwaKarty[0];
     ch[1]=NazwaKarty[1];
     ch[2]=NazwaKarty[2];
-    return ch;
+    sim[0]=ch[0];
+    sim[1]=ch[1];
+    sim[2]=ch[2];
+    sim1[0]=sim[0];
+    sim1[1]=sim[1];
+    sim1[2]=sim[2];
+    return sim;
 }

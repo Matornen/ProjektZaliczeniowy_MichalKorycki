@@ -11,7 +11,7 @@ private:
 	CKrupier* Krupier;
 	CTalia* Talia;
 public:
-	CScheduler(int przyIluPasKrupier=17);
+	CScheduler(int przyIluPasKrupier=17, int Kredyty=50000);
 	~CScheduler();
 	void Run();
 };

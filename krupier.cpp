@@ -2,11 +2,12 @@
 
 
 
-CKrupier::CKrupier(int x, CTalia* AdresTalii)
+CKrupier::CKrupier(int x, CTalia* AdresTalii, int kredyty)
 {
 	IloscKartNaRece = 0;
 	suma = 0;
 	przyilupas = x;
+	kasa=kredyty;
 	ptrTalia = AdresTalii;
 }
 
@@ -21,7 +22,7 @@ int CKrupier::Graj()
 	Zlicz();
 	if (suma > 21)
 	{
-		cout << "Krupier: Masz w kartach: " << suma <<" PRZEGRALES !!"<< endl;
+		cout << "Krupier: Masz w kartach: " << suma << endl;
 		return 0;
 	}
 	else if (suma >= przyilupas)
@@ -57,3 +58,12 @@ void CKrupier::PokazKarty()
         }
         cout<<endl;
     }
+
+void CKrupier::ClearHand()
+{
+    using namespace std;
+    for (int i=0; i<IloscKartNaRece; i++)
+        {
+           ptrTabKart[IloscKartNaRece++]=0;
+        }
+}
