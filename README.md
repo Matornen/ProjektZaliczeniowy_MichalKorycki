@@ -3,6 +3,7 @@
 Projekt: CasinoRoyale
 Projekt odwzorowuje stół do gry w oczko, użytkownik (zwany dalej Graczem) mierzy się z Krupierem, zgodnie z zasadami gry w oczko.
 
+Projekt bazuje na podstawie zadania 9: Gra w oczko, ze strony http://www.student.mvlab.pl/info3.html
 Schemat UML projektu został zawarty w plikach dostępnych w powyższym repozytorium.
 
 Program zawiera 5 klas: 
